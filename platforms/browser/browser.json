@@ -1,0 +1,44 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.brodysoft.sqlitePlugin": {
+            "PACKAGE_NAME": "com.example.hello"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.example.hello"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.example.hello"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/com.brodysoft.sqlitePlugin/www/SQLitePlugin.js",
+            "id": "com.brodysoft.sqlitePlugin.SQLitePlugin",
+            "pluginId": "com.brodysoft.sqlitePlugin",
+            "clobbers": [
+                "SQLitePlugin"
+            ]
+        },
+        {
+            "file": "plugins/org.apache.cordova.dialogs/www/notification.js",
+            "id": "org.apache.cordova.dialogs.notification",
+            "pluginId": "org.apache.cordova.dialogs",
+            "merges": [
+                "navigator.notification"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "com.brodysoft.sqlitePlugin": "1.0.3",
+        "org.apache.cordova.console": "0.2.12",
+        "org.apache.cordova.dialogs": "0.2.11"
+    }
+}
