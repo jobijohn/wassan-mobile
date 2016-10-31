@@ -10,9 +10,30 @@
         <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="css/toptal.css" />
         <title>Wassan</title>
+        <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+            // Wait for Cordova to load
+            //
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            // Cordova is ready
+            //
+            function onDeviceReady() {
+                var ref = window.open('http://54.255.168.92:8080/createIssue', '_blank', 'location=yes');
+               /* ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+                ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
+                ref.addEventListener('exit', function() { alert(event.type); });*/
+            }
+
+        </script>
     </head>
     <body>
-        <div id="container">
+
+
+   <!-- <div id="Load"></div>-->
+
+        <!--<div id="container">
             <div id="tab-content">
                     
             </div>
@@ -23,7 +44,7 @@
                 <li id="post-tab-button" class="tab-button" data-tab="#add-tab">Create an Issue</li>
             </ul>
         </footer>
-        <div id="dev-null" style="display: none"></div>
+        <div id="dev-null" style="display: none"></div>-->
         <script src="js/lib/jquery-1.11.1.min.js"></script>
         <script src="js/lib/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
@@ -33,3 +54,7 @@
 
     </body>
 </html>
+
+        <!--<script>
+            $('#Load').load('http://54.255.168.92:8080/createIssue');
+        </script>-->

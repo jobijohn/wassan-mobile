@@ -17,5 +17,8 @@
         <splash src="www/img/logo.png" density="mdpi"/>
         <splash src="www/img/logo.png" density="hdpi"/>
         <splash src="www/img/logo.png" density="xhdpi"/>
+        <feature name="InAppBrowser">
+            <param name="android-package" value="org.apache.cordova.InAppBrowser" />
+        </feature>
     </platform>
 </widget>

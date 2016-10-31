@@ -23,6 +23,15 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
+    },
+    {
+        "id": "cordova-plugin-inappbrowser.inappbrowser",
+        "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+        "pluginId": "cordova-plugin-inappbrowser",
+        "clobbers": [
+            "cordova.InAppBrowser.open",
+            "window.open"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -30,7 +39,8 @@ module.exports.metadata =
 {
     "com.brodysoft.sqlitePlugin": "1.0.3",
     "org.apache.cordova.console": "0.2.12",
-    "org.apache.cordova.dialogs": "0.2.11"
+    "org.apache.cordova.dialogs": "0.2.11",
+    "cordova-plugin-inappbrowser": "1.6.0-dev"
 };
 // BOTTOM OF METADATA
 });

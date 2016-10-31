@@ -25,6 +25,10 @@
                         {
                             "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -39,6 +43,9 @@
             "PACKAGE_NAME": "com.example.hello"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.example.hello"
+        },
+        "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.example.hello"
         }
     },
@@ -67,11 +74,21 @@
             "merges": [
                 "navigator.notification"
             ]
+        },
+        {
+            "id": "cordova-plugin-inappbrowser.inappbrowser",
+            "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+            "pluginId": "cordova-plugin-inappbrowser",
+            "clobbers": [
+                "cordova.InAppBrowser.open",
+                "window.open"
+            ]
         }
     ],
     "plugin_metadata": {
         "com.brodysoft.sqlitePlugin": "1.0.3",
         "org.apache.cordova.console": "0.2.12",
-        "org.apache.cordova.dialogs": "0.2.11"
+        "org.apache.cordova.dialogs": "0.2.11",
+        "cordova-plugin-inappbrowser": "1.6.0-dev"
     }
 }

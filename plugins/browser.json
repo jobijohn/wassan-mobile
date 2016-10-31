@@ -6,7 +6,11 @@
     "config_munge": {
         "files": {}
     },
-    "installed_plugins": {},
+    "installed_plugins": {
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.example.hello"
+        }
+    },
     "dependent_plugins": {
         "com.brodysoft.sqlitePlugin": {
             "PACKAGE_NAME": "com.example.hello"

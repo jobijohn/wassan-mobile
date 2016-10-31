@@ -39,29 +39,35 @@ var Controller = function() {
 
             var $tab = $('#tab-content');
             $tab.empty();
-            $("#tab-content").load("./views/post-project-view.html", function(data) {
-                $('#tab-content').find('#post-project-form').on('submit', self.postProject);
+            $("#tab-content").load("./views/create-issue-view.html", function(data) {
+                $('#tab-content').find('#post-project-form').on('submit', self.createIssue);
             }); 
         },
         
 
-        postProject: function(e) {
+        createIssue: function(e) {
 
             e.preventDefault();
-            var name = $('#project-name').val();
-            var description = $('#project-description').val();
-            var company = $('#company').val();
-            var addLocation = $('#include-location').is(':checked');
+            var issueType = $('#issue-type').val();
+            var summary = $('#summary').val();
+            var district = $('#ap-district').val();
+            var taluk = $('#ap-taluk').val();
+            var seedName = $('#ap-seed-name').val();
+            var seedQty = $('#ap-seed-qty').val();
+            var acres = $('#ap-acres').val();
 
-            if (!name || !description || !company) {
+            if (!issueType || !summary || !district || !taluk || !seedName || !seedQty || !acres) {
                 alert('Please fill in all fields');
                 return;
             } else {
+
+                //TODO: Add to JIRA////////////
                 var result = self.storageService.addProject(
-                    name, company, description, addLocation);
+                    issueType, summary, district, taluk, seedName, seedQty, acres);
+                ////////////////
 
                 result.done(function() {
-                    alert('Project successfully added');
+                    alert('Issue successfully created');
                     self.renderSearchView();
                 }).fail(function(error) {
                     alert(error);
@@ -78,7 +84,7 @@ var Controller = function() {
             $tab.empty();
 
             var $projectTemplate = null;
-            $("#tab-content").load("./views/search-project-view.html", function(data) {
+            $("#tab-content").load("./views/search-issue-view.html", function(data) {
                 $projectTemplate = $('.project').remove();
 
                 var projects = self.storageService.getProjects().done(function(projects) {
